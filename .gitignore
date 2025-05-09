@@ -1,0 +1,7 @@
+*/logs/
+
+/deployment/postgres_data/
+/deployment/.env
+/venv/
+/.idea
+
