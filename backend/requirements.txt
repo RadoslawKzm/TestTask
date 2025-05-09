@@ -22,9 +22,9 @@ sqlalchemy_utils == 0.41.2
 asyncpg == 0.30.0
 psycopg2-binary
 
-# Logger
+# Observability
 loguru == 0.7.3
-prometheus-fastapi-instrumentator == 7.1.0
+
 
 # Code quality
 ruff == 0.8.4

@@ -204,7 +204,7 @@ async def create_person(
         end_date=person.end_date,
         description=person.description,
     )
-    await session.add(db_person)
+    session.add(db_person)
     try:
         await session.commit()
     except Exception as exc_info:

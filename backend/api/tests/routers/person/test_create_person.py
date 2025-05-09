@@ -1,4 +1,4 @@
-from unittest.mock import AsyncMock
+from unittest.mock import AsyncMock, Mock
 
 import fastapi
 import pytest
@@ -41,7 +41,7 @@ async def test_create_person(mock_session, mocker, sync_client: TestClient):
     status_code = fastapi.status.HTTP_201_CREATED
     person_id = 1
 
-    mock_session.add = AsyncMock()
+    mock_session.add = Mock()
     mock_session.commit = AsyncMock()
     mock_session.refresh = AsyncMock(
         side_effect=lambda obj: setattr(obj, "person_id", person_id)
@@ -107,7 +107,7 @@ def test_create_person_future_start_date(sync_client: TestClient):
 
 @pytest.mark.asyncio
 async def test_create_person_db_error(mock_session, sync_client: TestClient):
-    mock_session.add = AsyncMock()
+    mock_session.add = Mock()
     mock_session.commit = AsyncMock(side_effect=Exception("Database error"))
     response = sync_client.post(url="/person/", json=valid_person_data)
     assert response.status_code == 400

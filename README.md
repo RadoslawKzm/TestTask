@@ -111,3 +111,5 @@ User: `postgres`, Password:`postgres`
 ## TBD
 - Internal exceptions
 - Exceptions model to streamline HTTPExceptions
+- Loki Grafana
+- Prometheus
